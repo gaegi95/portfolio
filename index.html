@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIM JONG HAN | Tour Conductor & Travel Portfolio</title>
+    <meta name="description"
+        content="세계를 무대로 완벽한 여정을 안내하는 투어컨덕터(TC) 김종한의 포트폴리오 공간입니다. 신뢰와 감동을 선사하는 여행 기획과 프로젝트를 확인해 보세요.">
+    <!-- Google Fonts: Outfit for modern UI, Playfair Display for elegant headings, Noto Sans KR for Korean support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Dynamic Clouds Background -->
+    <div class="sky-background">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+    </div>
+
+    <!-- Active View Wrapper -->
+    <main id="app-container">
+
+        <!-- ==================== INTRO / STANDBY SCREEN ==================== -->
+        <section id="page-intro" class="active">
+            <canvas id="intro-canvas"></canvas>
+
+            <!-- Radar HUD overlay -->
+            <div class="hud-scanner"></div>
+
+            <div class="intro-glass-panel">
+                <div class="radar-circle">
+                    <div class="radar-sweep"></div>
+                    <i class="fa-solid fa-plane-landing radar-plane-icon"></i>
+                </div>
+
+                <div class="intro-titles">
+                    <span class="hud-tag">2026 PORTFOLIO</span>
+                    <h1 class="intro-main-title">KIM JONG HAN</h1>
+                    <p class="intro-sub-title">PROFESSIONAL TOUR CONDUCTOR</p>
+                </div>
+
+                <div class="control-status">
+                    <span class="pulse-indicator"></span>
+                    <span class="status-text">STATUS: STANDBY IN HOLDING PATTERN</span>
+                </div>
+
+                <button id="btn-go-around" class="btn-go-around">
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <span>GO AROUND</span>
+                    <span class="btn-subtext">INITIATE APPROACH</span>
+                </button>
+            </div>
+
+            <div class="intro-instructions">
+                <i class="fa-solid fa-angles-down text-bounce"></i>
+                <span>CLICK GO AROUND TO REQUEST CLEARANCE</span>
+            </div>
+        </section>
+
+        <!-- ==================== MAIN DASHBOARD ==================== -->
+        <section id="page-main" class="page-view">
+            <!-- Header Badges -->
+            <header class="dashboard-header">
+                <div class="badge-left">
+                    <i class="fa-solid fa-passport"></i>
+                    <span>TOUR CONDUCTOR</span>
+                </div>
+
+                <!-- Return to Standby Airplane Button -->
+                <button id="btn-return-standby" class="btn-return-standby" title="Return to Airspace Standby">
+                    <i class="fa-solid fa-plane"></i>
+                </button>
+
+                <div class="badge-right">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>GLOBAL TRAVEL SPECIALIST</span>
+                </div>
+            </header>
+
+
+            <!-- Grid Content -->
+            <div class="dashboard-grid">
+                <!-- Left: Profile VIP Boarding Pass Card -->
+                <div class="grid-left">
+                    <div class="profile-ticket" id="btn-profile" role="button" tabindex="0">
+                        <div class="ticket-header-vip">
+                            <span class="vip-label">VIP FREQUENT FLYER</span>
+                            <span class="class-label">FIRST CLASS</span>
+                        </div>
+                        <div class="profile-card-body">
+                            <!-- Avatar / Stamp -->
+                            <div class="avatar-container">
+                                <div class="avatar-stamp">
+                                    <i class="fa-solid fa-plane-departure plane-icon"></i>
+                                    <div class="stamp-circle"></div>
+                                </div>
+                                <div class="avatar-glow"></div>
+                            </div>
+                            <!-- Stats & Info -->
+                            <h3 class="passenger-name">KIM JONG HAN</h3>
+                            <p class="passenger-title">Professional Tour Conductor</p>
+
+                            <div class="passenger-stats">
+                                <div class="stat-item">
+                                    <span class="stat-num">10+</span>
+                                    <span class="stat-lbl">Countries</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-num">50+</span>
+                                    <span class="stat-lbl">Tours Led</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-num">95%</span>
+                                    <span class="stat-lbl">Satisfaction</span>
+                                </div>
+                            </div>
+
+                            <button class="btn-action-primary">
+                                <i class="fa-solid fa-ticket"></i> BOARDING PASS (PROFILE)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: 4 Project Boarding Passes -->
+                <div class="grid-right">
+                    <!-- Ticket 1: Cherry-Pick -->
+                    <div class="boarding-pass">
+                        <div class="ticket-stub-left">
+                            <div class="flight-tag">FLIGHT KJH01</div>
+                            <div class="airport-codes">
+                                <div class="airport">
+                                    <span class="code">SEL</span>
+                                    <span class="city">SEOUL</span>
+                                </div>
+                                <i class="fa-solid fa-plane plane-fly"></i>
+                                <div class="airport">
+                                    <span class="code">CRP</span>
+                                    <span class="city">CHERRY-PICK</span>
+                                </div>
+                            </div>
+                            <div class="ticket-details">
+                                <div class="detail-col">
+                                    <span class="detail-lbl">PASSENGER</span>
+                                    <span class="detail-val">KIM JONG HAN</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">CLASS</span>
+                                    <span class="detail-val text-gold">FIRST</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">SEAT</span>
+                                    <span class="detail-val">1A</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">GATE</span>
+                                    <span class="detail-val">01</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="perforated-line"></div>
+                        <div class="ticket-stub-right">
+                            <div class="barcode-container">
+                                <div class="barcode"></div>
+                                <div class="barcode-text">CHERRY-PICK</div>
+                            </div>
+                            <div class="ticket-btn-group">
+                                <a href="https://gaegi95.github.io/Concept/" target="_blank"
+                                    class="btn-board btn-concept">CONCEPT</a>
+                                <a href="https://cherry-pick-ruby.vercel.app/" target="_blank"
+                                    class="btn-board btn-website">WEBSITE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ticket 2: Sungkok Art Museum -->
+                    <div class="boarding-pass">
+                        <div class="ticket-stub-left">
+                            <div class="flight-tag">FLIGHT KJH02</div>
+                            <div class="airport-codes">
+                                <div class="airport">
+                                    <span class="code">SEL</span>
+                                    <span class="city">SEOUL</span>
+                                </div>
+                                <i class="fa-solid fa-plane plane-fly"></i>
+                                <div class="airport">
+                                    <span class="code">SAM</span>
+                                    <span class="city">SUNGKOK ART</span>
+                                </div>
+                            </div>
+                            <div class="ticket-details">
+                                <div class="detail-col">
+                                    <span class="detail-lbl">PASSENGER</span>
+                                    <span class="detail-val">KIM JONG HAN</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">CLASS</span>
+                                    <span class="detail-val text-blue">BUSINESS</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">SEAT</span>
+                                    <span class="detail-val">2B</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">GATE</span>
+                                    <span class="detail-val">02</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="perforated-line"></div>
+                        <div class="ticket-stub-right">
+                            <div class="barcode-container">
+                                <div class="barcode"></div>
+                                <div class="barcode-text">SUNGKOK ART</div>
+                            </div>
+                            <div class="ticket-btn-group">
+                                <a href="YOUR_SUNGKOK_CONCEPT_URL" target="_blank"
+                                    class="btn-board btn-concept">CONCEPT</a>
+                                <a href="https://luxury-fried-90492921.figma.site/" target="_blank"
+                                    class="btn-board btn-website">WEBSITE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ticket 3: Lottery number generator -->
+                    <div class="boarding-pass">
+                        <div class="ticket-stub-left">
+                            <div class="flight-tag">FLIGHT KJH03</div>
+                            <div class="airport-codes">
+                                <div class="airport">
+                                    <span class="code">SEL</span>
+                                    <span class="city">SEOUL</span>
+                                </div>
+                                <i class="fa-solid fa-plane plane-fly"></i>
+                                <div class="airport">
+                                    <span class="code">LTG</span>
+                                    <span class="city">LOTTERY GEN</span>
+                                </div>
+                            </div>
+                            <div class="ticket-details">
+                                <div class="detail-col">
+                                    <span class="detail-lbl">PASSENGER</span>
+                                    <span class="detail-val">KIM JONG HAN</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">CLASS</span>
+                                    <span class="detail-val">ECONOMY</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">SEAT</span>
+                                    <span class="detail-val">3C</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">GATE</span>
+                                    <span class="detail-val">03</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="perforated-line"></div>
+                        <div class="ticket-stub-right">
+                            <div class="barcode-container">
+                                <div class="barcode"></div>
+                                <div class="barcode-text">LOTTERY GEN</div>
+                            </div>
+                            <div class="ticket-btn-group">
+                                <a href="YOUR_LOTTERY_CONCEPT_URL" target="_blank"
+                                    class="btn-board btn-concept">CONCEPT</a>
+                                <a href="https://script.google.com/macros/s/AKfycbwIYuqZlQ1IR2JCyJi-JjCyit4s6SksnitHsQ32eutyaWWwFeSVYNaG0s9JSzFTWtA/exec"
+                                    target="_blank" class="btn-board btn-website">WEBSITE</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ticket 4: project N -->
+                    <div class="boarding-pass">
+                        <div class="ticket-stub-left">
+                            <div class="flight-tag">FLIGHT KJH04</div>
+                            <div class="airport-codes">
+                                <div class="airport">
+                                    <span class="code">SEL</span>
+                                    <span class="city">SEOUL</span>
+                                </div>
+                                <i class="fa-solid fa-plane plane-fly"></i>
+                                <div class="airport">
+                                    <span class="code">PRN</span>
+                                    <span class="city">PROJECT N</span>
+                                </div>
+                            </div>
+                            <div class="ticket-details">
+                                <div class="detail-col">
+                                    <span class="detail-lbl">PASSENGER</span>
+                                    <span class="detail-val">KIM JONG HAN</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">CLASS</span>
+                                    <span class="detail-val text-red">SPECIAL</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">SEAT</span>
+                                    <span class="detail-val">4D</span>
+                                </div>
+                                <div class="detail-col">
+                                    <span class="detail-lbl">GATE</span>
+                                    <span class="detail-val">04</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="perforated-line"></div>
+                        <div class="ticket-stub-right">
+                            <div class="barcode-container">
+                                <div class="barcode"></div>
+                                <div class="barcode-text">PROJECT N</div>
+                            </div>
+                            <div class="ticket-btn-group">
+                                <a href="YOUR_PROJECT_N_CONCEPT_URL" target="_blank"
+                                    class="btn-board btn-concept">CONCEPT</a>
+                                <a href="YOUR_PROJECT_N_WEBSITE_URL" target="_blank"
+                                    class="btn-board btn-website">WEBSITE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="dashboard-footer">
+                <div class="copyright-info">
+                    COPYRIGHT© KIM JONG HAN. ALL RIGHTS RESERVED
+                </div>
+                <div class="brand-logo" id="footer-logo">
+                    <span class="logo-text">KIM JONG HAN</span>
+                    <i class="fa-solid fa-compass compass-rotate"></i>
+                </div>
+            </footer>
+        </section>
+
+
+        <!-- ==================== SUB PAGE: PROFILE ==================== -->
+        <section id="page-profile" class="page-view">
+            <div class="subpage-container">
+                <header class="subpage-header">
+                    <button class="btn-back"><i class="fa-solid fa-arrow-left"></i> RETURN TICKET</button>
+                    <h2>PASSENGER PROFILE &amp; RESUME</h2>
+                </header>
+
+                <div class="subpage-content">
+                    <div class="profile-grid">
+                        <!-- Left Panel: Passenger Passport ID Card & Ability Radar -->
+                        <div class="profile-summary">
+                            <div class="summary-card passenger-passport-card">
+                                <div class="passport-header">
+                                    <span class="passport-type">PASSPORT IDENTITY</span>
+                                    <i class="fa-solid fa-passport passport-icon"></i>
+                                </div>
+                                <div class="passport-photo-slot">
+                                    <i class="fa-solid fa-user-tie captain-avatar"></i>
+                                    <div class="stamp-overlay">PASSED</div>
+                                </div>
+                                <h3 class="passport-name-kr">김종한</h3>
+                                <h4 class="passport-name-en">KIM JONG HAN</h4>
+                                <p class="passport-title">AI-Powered Tour Conductor</p>
+
+                                <div class="passport-personal-info">
+                                    <div class="info-row">
+                                        <span class="lbl">DATE OF BIRTH</span>
+                                        <span class="val">1995 (95년생)</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="lbl">PORT OF ORIGIN</span>
+                                        <span class="val">DAEJEON (대전)</span>
+                                    </div>
+                                </div>
+
+                                <ul class="quick-details passport-contact-info">
+                                    <li><i class="fa-solid fa-envelope"></i> rlawhdgks9@gmail.com</li>
+                                    <li><i class="fa-solid fa-location-dot"></i> Daejeon, South Korea</li>
+                                </ul>
+
+                                <div class="passport-stamps-group">
+                                    <div class="stamp-item stamp-tc">
+                                        <i class="fa-solid fa-award"></i>
+                                        <span>TC LICENSE</span>
+                                    </div>
+                                    <div class="stamp-item stamp-safe">
+                                        <i class="fa-solid fa-heart-pulse"></i>
+                                        <span>FIRST AID</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 🕸️ CORE ABILITY RADAR 방사형 그래프 -->
+                            <div class="ability-radar-card">
+                                <h4>CORE ABILITY RADAR</h4>
+                                <div class="radar-chart-wrapper">
+                                    <svg viewBox="0 0 100 100" class="radar-svg">
+                                        <!-- Background Pentagons representing grid boundaries -->
+                                        <polygon points="50,12 85,38 72,78 28,78 15,38" class="grid-poly" />
+                                        <polygon points="50,22 76,41 66,71 34,71 24,41" class="grid-poly" />
+                                        <polygon points="50,31 68,44 61,64 39,64 32,44" class="grid-poly" />
+                                        <polygon points="50,41 59,48 55,57 45,57 41,48" class="grid-poly" />
+
+                                        <!-- Axis Lines -->
+                                        <line x1="50" y1="50" x2="50" y2="12" class="axis-line" />
+                                        <line x1="50" y1="50" x2="85" y2="38" class="axis-line" />
+                                        <line x1="50" y1="50" x2="72" y2="78" class="axis-line" />
+                                        <line x1="50" y1="50" x2="28" y2="78" class="axis-line" />
+                                        <line x1="50" y1="50" x2="15" y2="38" class="axis-line" />
+
+                                        <!-- Real Radar Data Polygon (Safety: 95%, Leading: 90%, English: 60%, Coding: 85%, AI Tech: 99%) -->
+                                        <polygon points="50,13 81.5,39.2 63.2,66.8 31.4,73.8 15.3,38.1"
+                                            class="data-poly" />
+
+                                        <!-- Data nodes -->
+                                        <circle cx="50" cy="13" r="1.8" class="data-node" />
+                                        <circle cx="81.5" cy="39.2" r="1.8" class="data-node" />
+                                        <circle cx="63.2" cy="66.8" r="1.8" class="data-node" />
+                                        <circle cx="31.4" cy="73.8" r="1.8" class="data-node" />
+                                        <circle cx="15.3" cy="38.1" r="1.8" class="data-node" />
+
+                                        <!-- Labels -->
+                                        <text x="50" y="8" class="label-text label-top">🛡️ SAFETY</text>
+                                        <text x="88" y="38" class="label-text label-rt">✈️ LEADING</text>
+                                        <text x="75" y="83" class="label-text label-rb">💬 ENGLISH</text>
+                                        <text x="25" y="83" class="label-text label-lb">💻 CODE</text>
+                                        <text x="12" y="38" class="label-text label-lt">🤖 AI TECH</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Visual Dashboard Infographic Resume -->
+                        <div class="profile-details">
+                            <!-- 🎛️ Core Competency Gauges: Circle Dials -->
+                            <div class="info-section">
+                                <h3><i class="fa-solid fa-sliders"></i> CORE COMPETENCY GAUGE</h3>
+                                <div class="circle-gauges-wrapper">
+                                    <!-- Gauge 1 -->
+                                    <div class="gauge-item">
+                                        <div class="chart-box">
+                                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                                <path class="circle-bg"
+                                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                <path class="circle circle-conversational" stroke-dasharray="95, 100"
+                                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                <text x="18" y="20.35" class="percentage">95%</text>
+                                            </svg>
+                                        </div>
+                                        <div class="gauge-label">
+                                            <h4>대화형 AI 활용</h4>
+                                            <p>ChatGPT / Claude / Gemini</p>
+                                        </div>
+                                    </div>
+                                    <!-- Gauge 2 -->
+                                    <div class="gauge-item">
+                                        <div class="chart-box">
+                                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                                <path class="circle-bg"
+                                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                <path class="circle circle-agentic" stroke-dasharray="90, 100"
+                                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                <text x="18" y="20.35" class="percentage">90%</text>
+                                            </svg>
+                                        </div>
+                                        <div class="gauge-label">
+                                            <h4>에이전트 AI 활용</h4>
+                                            <p>Antigravity / AI Studio</p>
+                                        </div>
+                                    </div>
+                                    <!-- Gauge 3 -->
+                                    <div class="gauge-item">
+                                        <div class="chart-box">
+                                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                                <path class="circle-bg"
+                                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                <path class="circle circle-integration" stroke-dasharray="88, 100"
+                                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                <text x="18" y="20.35" class="percentage">88%</text>
+                                            </svg>
+                                        </div>
+                                        <div class="gauge-label">
+                                            <h4>업무 자동화 통합</h4>
+                                            <p>Azure OCR / Excel Automation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ⚙️ Workflow: OCR Automation Pipeline Flowchart -->
+                            <div class="info-section">
+                                <h3><i class="fa-solid fa-gears"></i> WORKFLOW: PASSPORT OCR PIPELINE</h3>
+                                <div class="ocr-pipeline-container">
+                                    <div class="pipeline-step">
+                                        <div class="step-num">01</div>
+                                        <div class="step-icon-wrap">
+                                            <i class="fa-solid fa-file-image"></i>
+                                        </div>
+                                        <h4>여권 파일 업로드</h4>
+                                        <span class="step-tag-mini">PNG / JPG / PDF</span>
+                                    </div>
+                                    <div class="pipeline-arrow">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                    <div class="pipeline-step scanner-active">
+                                        <div class="step-num">02</div>
+                                        <div class="step-icon-wrap scanner-glow">
+                                            <i class="fa-solid fa-qrcode"></i>
+                                        </div>
+                                        <h4>Azure OCR 판독</h4>
+                                        <span class="step-tag-mini">클라우드 AI 스캔</span>
+                                    </div>
+                                    <div class="pipeline-arrow">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                    <div class="pipeline-step">
+                                        <div class="step-num">03</div>
+                                        <div class="step-icon-wrap">
+                                            <i class="fa-solid fa-file-excel"></i>
+                                        </div>
+                                        <h4>엑셀 자동 정렬</h4>
+                                        <span class="step-tag-mini">VBA 데이터 파싱</span>
+                                    </div>
+                                    <div class="pipeline-arrow">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                    <div class="pipeline-step">
+                                        <div class="step-num">04</div>
+                                        <div class="step-icon-wrap">
+                                            <i class="fa-solid fa-address-card"></i>
+                                        </div>
+                                        <h4>고객 명찰 자동인쇄</h4>
+                                        <span class="step-tag-mini">일괄 양식 자동완성</span>
+                                    </div>
+                                </div>
+                                <div class="pipeline-stats-badge">
+                                    <div class="stat-badge-item">
+                                        <span class="num">10% 미만</span>
+                                        <span class="desc">에러율 (Error Rate)</span>
+                                    </div>
+                                    <div class="stat-badge-item">
+                                        <span class="num">10x배</span>
+                                        <span class="desc">업무 처리 속도 (Speedup)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ✈️ Dotted Flight Path: Projects Dotted Timeline -->
+                            <div class="info-section">
+                                <h3><i class="fa-solid fa-plane-departure"></i> DIGITAL FLIGHT PATH (PROJECTS TRACK)
+                                </h3>
+                                <div class="flight-path-timeline">
+                                    <div class="flight-path-line"></div>
+
+                                    <!-- Node 1 -->
+                                    <div class="flight-path-node">
+                                        <div class="node-icon-wrap">
+                                            <i class="fa-solid fa-plane"></i>
+                                        </div>
+                                        <div class="node-bubble">
+                                            <span class="node-flight-no">FLIGHT 01</span>
+                                            <h4>CHERRY-PICK</h4>
+                                            <span class="node-badge-tag">카드 추천 웹앱개발</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Node 2 -->
+                                    <div class="flight-path-node">
+                                        <div class="node-icon-wrap">
+                                            <i class="fa-solid fa-plane"></i>
+                                        </div>
+                                        <div class="node-bubble">
+                                            <span class="node-flight-no">FLIGHT 02</span>
+                                            <h4>SUNGKOK MUSEUM</h4>
+                                            <span class="node-badge-tag">노후 홈페이지 리뉴얼</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Node 3 -->
+                                    <div class="flight-path-node">
+                                        <div class="node-icon-wrap">
+                                            <i class="fa-solid fa-plane"></i>
+                                        </div>
+                                        <div class="node-bubble">
+                                            <span class="node-flight-no">FLIGHT 03</span>
+                                            <h4>LOTTERY GENERATOR</h4>
+                                            <span class="node-badge-tag">동적 알고리즘 추첨기</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Node 4 -->
+                                    <div class="flight-path-node">
+                                        <div class="node-icon-wrap">
+                                            <i class="fa-solid fa-plane"></i>
+                                        </div>
+                                        <div class="node-bubble">
+                                            <span class="node-flight-no">FLIGHT 04</span>
+                                            <h4>PROJECT N</h4>
+                                            <span class="node-badge-tag">VR 물리 엔진 기반 게임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 🏅 Governmental Credentials -->
+                            <div class="info-section">
+                                <h3><i class="fa-solid fa-shield-halved"></i> GOVERNMENTAL CREDENTIALS</h3>
+                                <div class="credentials-badge-container">
+                                    <div class="credential-badge-item">
+                                        <i class="fa-solid fa-medal icon-badge"></i>
+                                        <div class="badge-texts">
+                                            <h4>국외여행인솔자 자격증</h4>
+                                            <p>문화체육관광부 공인 국가자격</p>
+                                        </div>
+                                    </div>
+                                    <div class="credential-badge-item">
+                                        <i class="fa-solid fa-kit-medical icon-badge"></i>
+                                        <div class="badge-texts">
+                                            <h4>수학여행 안전요원 &amp; 응급처치 수료증</h4>
+                                            <p>대한적십자사 수료</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <!-- ==================== AIRPLANE TRANSITION OVERLAY ==================== -->
+    <div id="transition-overlay">
+        <div class="sky-overlay-gradient"></div>
+        <!-- Clouds drifting across the transition -->
+        <div class="trans-cloud trans-cloud-1"></div>
+        <div class="trans-cloud trans-cloud-2"></div>
+        <!-- Huge CSS/SVG Airplane sweeping left-to-right -->
+        <div class="airplane-container">
+            <svg class="trans-airplane" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Sleek Airplane Vector Top View -->
+                <path d="M50 5 L55 35 L90 50 L55 50 L50 90 L60 95 L40 95 L50 90 L45 50 L10 50 L45 35 Z" fill="#ffffff"
+                    stroke="#bae6fd" stroke-width="2" stroke-linejoin="round" />
+                <!-- Jet flame / flight trail particles -->
+                <circle cx="50" cy="98" r="3" fill="#bae6fd" opacity="0.8" />
+            </svg>
+            <div class="vapor-trail"></div>
+        </div>
+        <div class="transition-title">BOARDING NOW...</div>
+    </div>
+
+    <!-- ==================== TAKEOFF TRANSITION WIPE ==================== -->
+    <div id="takeoff-transition">
+        <div class="takeoff-airplane-wrapper">
+            <svg class="takeoff-airplane" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5 L58 32 L95 48 L58 48 L50 88 L60 93 L40 93 L50 88 L42 48 L5 48 L42 32 Z" fill="#ffffff"
+                    stroke="#bae6fd" stroke-width="1.5" stroke-linejoin="round" />
+                <circle cx="50" cy="95" r="4" fill="#38bdf8" opacity="0.9" />
+            </svg>
+            <div class="takeoff-engine-trail"></div>
+        </div>
+        <div class="takeoff-cloud-wipe"></div>
+    </div>
+
+    <!-- ==================== LANDING TRANSITION WIPE ==================== -->
+    <div id="landing-transition">
+        <div class="landing-airplane-wrapper">
+            <svg class="landing-airplane" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Airplane facing down (rotates 180 degrees) -->
+                <path d="M50 95 L58 68 L95 52 L58 52 L50 12 L60 7 L40 7 L50 12 L42 52 L5 52 L42 68 Z" fill="#ffffff"
+                    stroke="#bae6fd" stroke-width="1.5" stroke-linejoin="round" />
+                <circle cx="50" cy="5" r="4" fill="#38bdf8" opacity="0.9" />
+            </svg>
+            <div class="landing-engine-trail"></div>
+        </div>
+        <div class="landing-cloud-wipe"></div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="app.js"></script>
+</body>
+
+</html>
