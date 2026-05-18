@@ -196,7 +196,7 @@
                                 <i class="fa-solid fa-plane plane-fly"></i>
                                 <div class="airport">
                                     <span class="code">SAM</span>
-                                    <span class="city">SUNGKOK ART</span>
+                                    <span class="city">SUNGKOK ART MUSEUM</span>
                                 </div>
                             </div>
                             <div class="ticket-details">
@@ -222,10 +222,10 @@
                         <div class="ticket-stub-right">
                             <div class="barcode-container">
                                 <div class="barcode"></div>
-                                <div class="barcode-text">SUNGKOK ART</div>
+                                <div class="barcode-text">SUNGKOK ART MUSEUM</div>
                             </div>
                             <div class="ticket-btn-group">
-                                <a href="YOUR_SUNGKOK_CONCEPT_URL" target="_blank"
+                                <a href="https://gaegi95.github.io/museum/" target="_blank"
                                     class="btn-board btn-concept">CONCEPT</a>
                                 <a href="https://luxury-fried-90492921.figma.site/" target="_blank"
                                     class="btn-board btn-website">WEBSITE</a>
@@ -274,7 +274,7 @@
                                 <div class="barcode-text">LOTTERY GEN</div>
                             </div>
                             <div class="ticket-btn-group">
-                                <a href="YOUR_LOTTERY_CONCEPT_URL" target="_blank"
+                                <a href="https://gaegi95.github.io/lotto/" target="_blank"
                                     class="btn-board btn-concept">CONCEPT</a>
                                 <a href="https://script.google.com/macros/s/AKfycbwIYuqZlQ1IR2JCyJi-JjCyit4s6SksnitHsQ32eutyaWWwFeSVYNaG0s9JSzFTWtA/exec"
                                     target="_blank" class="btn-board btn-website">WEBSITE</a>
@@ -556,14 +556,14 @@
 
                             <!-- ✈️ Dotted Flight Path: Projects Dotted Timeline -->
                             <div class="info-section">
-                                <h3><i class="fa-solid fa-plane-departure"></i> AI-POWERED PROJECTS</h3>
+                                <h3><i class="fa-solid fa-brain"></i> AI-POWERED PROJECTS</h3>
                                 <div class="flight-path-timeline">
                                     <div class="flight-path-line"></div>
 
                                     <!-- Node 1 -->
-                                    <div class="flight-path-node">
+                                    <div class="flight-path-node" data-preview-url="img/Cherry-pick.png" data-preview-title="CHERRY-PICK 🍒" data-preview-desc="스마트 카드 추천 조합 웹앱" data-preview-class="">
                                         <div class="node-icon-wrap">
-                                            <i class="fa-solid fa-plane"></i>
+                                            <i class="fa-solid fa-credit-card"></i>
                                         </div>
                                         <div class="node-bubble">
                                             <span class="node-flight-no">FLIGHT 01</span>
@@ -573,21 +573,21 @@
                                     </div>
 
                                     <!-- Node 2 -->
-                                    <div class="flight-path-node">
+                                    <div class="flight-path-node" data-preview-url="img/Sungkok.png" data-preview-title="성곡미술관 리뉴얼 🎨" data-preview-desc="숲길 정원 브랜딩 리뉴얼 컨셉" data-preview-class="preview-sungkok">
                                         <div class="node-icon-wrap">
-                                            <i class="fa-solid fa-plane"></i>
+                                            <i class="fa-solid fa-palette"></i>
                                         </div>
                                         <div class="node-bubble">
                                             <span class="node-flight-no">FLIGHT 02</span>
-                                            <h4>SUNGKOK MUSEUM</h4>
+                                            <h4>SUNGKOK ART MUSEUM</h4>
                                             <span class="node-badge-tag">노후 홈페이지 리뉴얼</span>
                                         </div>
                                     </div>
 
                                     <!-- Node 3 -->
-                                    <div class="flight-path-node">
+                                    <div class="flight-path-node" data-preview-url="img/lotto.png" data-preview-title="로또추첨기 알고리즘 🎰" data-preview-desc="Apps Script 연동 서버리스 추첨기" data-preview-class="preview-lotto">
                                         <div class="node-icon-wrap">
-                                            <i class="fa-solid fa-plane"></i>
+                                            <i class="fa-solid fa-ticket"></i>
                                         </div>
                                         <div class="node-bubble">
                                             <span class="node-flight-no">FLIGHT 03</span>
@@ -599,7 +599,7 @@
                                     <!-- Node 4 -->
                                     <div class="flight-path-node">
                                         <div class="node-icon-wrap">
-                                            <i class="fa-solid fa-plane"></i>
+                                            <i class="fa-solid fa-gamepad"></i>
                                         </div>
                                         <div class="node-bubble">
                                             <span class="node-flight-no">FLIGHT 04</span>
@@ -686,6 +686,20 @@
             <div class="landing-engine-trail"></div>
         </div>
         <div class="landing-cloud-wipe"></div>
+    </div>
+
+    <!-- ==================== FLOATING LIVE SMARTPHONE PREVIEW ==================== -->
+    <div id="phone-preview-overlay" class="phone-preview-overlay">
+        <div class="phone-device">
+            <div class="phone-island"></div>
+            <div class="phone-screen-container">
+                <img id="phone-preview-img" src="" alt="Preview Screen">
+            </div>
+            <div class="phone-glass-reflection"></div>
+        </div>
+        <div id="phone-preview-label" class="phone-label">
+            LIVE PREVIEW
+        </div>
     </div>
 
     <!-- JS Scripts -->

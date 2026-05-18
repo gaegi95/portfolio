@@ -2640,6 +2640,145 @@ body {
 }
 
 
+/* ==================== FLOATING LIVE SMARTPHONE PREVIEW ==================== */
+.phone-preview-overlay {
+    position: fixed;
+    right: -360px; /* Hidden offscreen by default */
+    top: 50%;
+    transform: translate3d(0, -50%, 0) scale(0.9); /* Force GPU compositing */
+    width: 280px;
+    height: 600px;
+    z-index: 1000;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                right 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    will-change: transform, opacity; /* Instruct GPU to prepare layer */
+}
+
+.phone-preview-overlay.active {
+    right: 5%; /* Slide in smoothly! */
+    transform: translate3d(0, -50%, 0) scale(1);
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.phone-device {
+    position: relative;
+    width: 260px;
+    height: 520px;
+    background: #0f172a;
+    border: 10px solid #1e293b;
+    border-radius: 36px;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.35), 
+                0 0 0 1px rgba(255, 255, 255, 0.05), 
+                0 0 30px rgba(14, 165, 233, 0.2);
+    overflow: hidden;
+}
+
+/* Smartphone Notch / Dynamic Island */
+.phone-island {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background: black;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.phone-screen-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 26px;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+.phone-screen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                padding-top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, padding-top;
+    box-sizing: border-box;
+    padding-top: 0;
+}
+
+.phone-screen-container img.loaded {
+    opacity: 1;
+}
+
+/* Specific: Sungkok desktop screenshot stretched to fill the vertical phone screen */
+.phone-screen-container img.preview-sungkok {
+    object-fit: fill; /* Force stretch horizontally and vertically to fill screen */
+    object-position: center;
+}
+
+/* Specific: Lotto pushed down by 40px to clear the dynamic island notch */
+.phone-screen-container img.preview-lotto {
+    padding-top: 40px; /* Shift screenshot down to clear the camera cutout */
+    object-fit: cover;
+    object-position: top center;
+    background: #0f172a; /* Match lotto dark theme */
+}
+
+/* Smartphone reflection glass effect */
+.phone-glass-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.phone-label {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 260px;
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, 
+                opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+    will-change: transform, opacity;
+}
+
+.phone-preview-overlay.active .phone-label {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+/* Hide floating preview on smaller screens to prevent overlap */
+@media (max-width: 1200px) {
+    .phone-preview-overlay {
+        display: none !important;
+    }
+}
+
+
 /* ==================== PROFILE MOBILE RESPONSIVENESS ==================== */
 @media (max-width: 992px) {
     .profile-grid {

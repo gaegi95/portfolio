@@ -293,4 +293,88 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100);
         });
     }
+
+    // ==================== TIMELINE HOVER LIVE SMARTPHONE PREVIEW ====================
+    const timelineNodes = document.querySelectorAll('.flight-path-node');
+    const phoneOverlay = document.getElementById('phone-preview-overlay');
+    const phoneImg = document.getElementById('phone-preview-img');
+    const phoneLabel = document.getElementById('phone-preview-label');
+
+    if (timelineNodes.length > 0 && phoneOverlay && phoneImg && phoneLabel) {
+        let hoverTimeout = null;
+        let slideOutTimeout = null;
+
+        timelineNodes.forEach(node => {
+            const previewUrl = node.getAttribute('data-preview-url');
+            const previewTitle = node.getAttribute('data-preview-title');
+            const previewDesc = node.getAttribute('data-preview-desc');
+
+            // Only bind hover transitions to active project nodes (Flight 01, 02, 03)
+            if (previewUrl) {
+                node.addEventListener('mouseenter', () => {
+                    // Clear any pending timeouts
+                    clearTimeout(hoverTimeout);
+                    clearTimeout(slideOutTimeout);
+
+                    // Debounce: 100ms hover trigger for lightning-fast responsiveness
+                    hoverTimeout = setTimeout(() => {
+                        // Reset image style classes
+                        phoneImg.className = '';
+                        
+                        // Set layout fit class if specified
+                        const previewClass = node.getAttribute('data-preview-class');
+                        if (previewClass) {
+                            phoneImg.classList.add(previewClass);
+                        }
+
+                        // Update static image src and labels
+                        phoneImg.src = previewUrl;
+                        phoneLabel.innerHTML = `<span style="color:#0ea5e9; font-weight:900;">${previewTitle}</span><br><span style="color:rgba(255,255,255,0.75); font-size:0.68rem; font-weight:500;">${previewDesc}</span>`;
+
+                        // Trigger dynamic hardware slide-in
+                        phoneOverlay.classList.add('active');
+
+                        // If image has already been loaded or cached, fade it in immediately
+                        if (phoneImg.complete) {
+                            phoneImg.classList.add('loaded');
+                        } else {
+                            phoneImg.onload = () => {
+                                phoneImg.classList.add('loaded');
+                            };
+                        }
+                    }, 100);
+                });
+
+                node.addEventListener('mouseleave', () => {
+                    clearTimeout(hoverTimeout);
+
+                    // Trigger slide-out
+                    phoneOverlay.classList.remove('active');
+
+                    // Reset phone state once completely off-screen
+                    slideOutTimeout = setTimeout(() => {
+                        if (!phoneOverlay.classList.contains('active')) {
+                            phoneImg.src = '';
+                            phoneImg.className = '';
+                            phoneImg.classList.remove('loaded');
+                        }
+                    }, 500);
+                });
+            } else {
+                // If Project N is hovered, make sure phone closes immediately
+                node.addEventListener('mouseenter', () => {
+                    clearTimeout(hoverTimeout);
+                    phoneOverlay.classList.remove('active');
+                    
+                    slideOutTimeout = setTimeout(() => {
+                        if (!phoneOverlay.classList.contains('active')) {
+                            phoneImg.src = '';
+                            phoneImg.className = '';
+                            phoneImg.classList.remove('loaded');
+                        }
+                    }, 500);
+                });
+            }
+        });
+    }
 });
