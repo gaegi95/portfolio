@@ -377,4 +377,41 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==================== UNDER CONSTRUCTION MODAL ====================
+    const constructionModal = document.getElementById('dev-construction-modal');
+    const closeConstructionBtn = document.getElementById('btn-close-construction');
+    const btnWebsites = document.querySelectorAll('.btn-website');
+
+    if (constructionModal && closeConstructionBtn) {
+        btnWebsites.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const href = btn.getAttribute('href');
+                // Only trigger if it has the placeholder URL or empty or hash
+                if (href === 'YOUR_PROJECT_N_WEBSITE_URL' || href === '' || href === '#') {
+                    e.preventDefault();
+                    constructionModal.classList.add('active');
+                }
+            });
+        });
+
+        // Close on button click
+        closeConstructionBtn.addEventListener('click', () => {
+            constructionModal.classList.remove('active');
+        });
+
+        // Close on overlay background click
+        constructionModal.addEventListener('click', (e) => {
+            if (e.target === constructionModal) {
+                constructionModal.classList.remove('active');
+            }
+        });
+
+        // Close on Escape key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && constructionModal.classList.contains('active')) {
+                constructionModal.classList.remove('active');
+            }
+        });
+    }
 });
