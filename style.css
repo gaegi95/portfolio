@@ -553,6 +553,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"],
 .text-gold { color: var(--amber-vip); }
 .text-blue { color: var(--sky-dark); }
 .text-red { color: #e11d48; }
+.text-purple { color: #a855f7; }
 
 /* Perforated Divider */
 .perforated-line {
@@ -1318,7 +1319,7 @@ a, button, [role="button"], input[type="submit"], input[type="button"],
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 22%;
+    width: 18%;
     transition: all 0.3s ease;
 }
 
