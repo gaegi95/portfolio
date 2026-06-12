@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT N - VR Apocalypse Stealth Survival Protocol</title>
+    <!-- Google Fonts: Space Grotesk for technical text, Special Elite for typewriter dossier feel, Share Tech Mono for the HUD -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Space+Grotesk:wght@300;400;500;600;700&family=Share+Tech+Mono&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for post-apocalyptic icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Zombie Apocalypse Atmosphere Elements -->
+    <div class="biohazard-grid"></div>
+    <div class="blood-splatter-overlay"></div>
+    <div class="vignette"></div>
+
+    <div class="container">
+        <!-- ==================== BIOHAZARD HAZARD HEADER ==================== -->
+        <header class="tactical-header">
+            <div class="header-left">
+                <span class="warning-ticker"><i class="fa-solid fa-triangle-exclamation"></i> CRITICAL WARNING: BIO-INFECTION LEVEL 5</span>
+                <span class="dossier-tag">SECTOR: SEOUL QUARANTINE ZONE</span>
+            </div>
+            
+            <div class="header-right">
+                <span class="clock-display" id="system-clock">00:00:00</span>
+                <div class="dossier-ver">FILE_REF: PROT_N_DTR</div>
+            </div>
+        </header>
+
+        <!-- ==================== HERO DOSSIER BRANDING ==================== -->
+        <section class="hero-dossier">
+            <div class="dossier-branding">
+                <div class="dossier-badge">CLASSIFIED / TOP SECRET OPERATIONAL DOSSIER</div>
+                <h1 class="stencil-title">PROJECT N</h1>
+                <h2 class="dossier-subtitle">VR Stealth Apocalypse Survival Prototype</h2>
+                <div class="stamps-row">
+                    <span class="stamp stamp-red">BIOHAZARD</span>
+                    <span class="stamp stamp-yellow">ACTIVE_DEV</span>
+                    <span class="stamp stamp-cyan">WEBXR_VR</span>
+                </div>
+            </div>
+
+            <!-- Gritty Tactical Scanner Frame -->
+            <div class="scanner-frame">
+                <div class="scan-line"></div>
+                <img src="./project_n_preview.png" alt="Tactical Survival HUD Preview" class="scanner-visual">
+                <div class="hud-marks">
+                    <span class="bracket tl"></span>
+                    <span class="bracket tr"></span>
+                    <span class="bracket bl"></span>
+                    <span class="bracket br"></span>
+                </div>
+                <div class="hud-overlay-text">
+                    <div>OBJECTIVE: SURVIVE & EXTRACT</div>
+                    <div class="warning-text"><i class="fa-solid fa-biohazard"></i> HOSTILES DETECTED</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DOSSIER CORE SECTIONS ==================== -->
+        <main class="dossier-content">
+            
+            <!-- SECTION 1: INSPIRATION & BACKGROUND -->
+            <section class="dossier-panel panel-dark">
+                <div class="panel-header">
+                    <h3><i class="fa-solid fa-skull-crossbones text-yellow"></i> 01. INSPIRATION / 기획 배경</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="inspiration-box">
+                        <p class="typewriter-text">
+                            본 프로젝트는 넥슨(Nexon)의 3인칭 탈출 생존 게임인 <strong>'낙원: Last Paradise'</strong>에서 영감을 받아 시작되었습니다. 
+                        </p>
+                        <p class="typewriter-text">
+                            좀비로 인해 멸망한 무법천지의 서울 아포칼립스 세계관 속에서 느끼는 특유의 숨막히는 긴장감과 생존 stealth의 재미를, 
+                            만약 <strong>1인칭 VR 가상현실</strong> 환경으로 완전히 이식한다면 한차원 높은 공포와 생생한 몰입감을 줄 수 있겠다는 확신이 개발의 시발점이 되었습니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: OPERATIONAL LOGISTICS (WHAT WE BUILT - 개발 완료 기능) -->
+            <section class="dossier-panel panel-dark">
+                <div class="panel-header">
+                    <h3><i class="fa-solid fa-circle-check text-green"></i> 02. COMPLETED SYSTEM LOGS / 개발 완료 기능</h3>
+                </div>
+                <div class="panel-body specs-deck">
+                    <!-- Feature 1 -->
+                    <div class="spec-card">
+                        <div class="spec-icon text-cyan"><i class="fa-solid fa-glasses"></i></div>
+                        <h4>WebXR VR 지원 및 접속</h4>
+                        <p>웹 브라우저 표준 VR API인 WebXR 포트를 구축하여, 복잡한 설치 없이 브라우저 상에서 헤드셋 장비(Meta Quest 등)와 연동되어 즉시 3D VR 공간으로 접속할 수 있습니다.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="spec-card">
+                        <div class="spec-icon text-cyan"><i class="fa-solid fa-cube"></i></div>
+                        <h4>Jolt 물리 엔진 바디 부여</h4>
+                        <p>최첨단 고성능 물리 엔진인 Jolt Physics Wasm 코어를 내장했습니다. 플레이어의 손, 머리 및 무기를 포함한 모든 개체에 정확한 물리 형상(Collider)과 바디 속성값을 부여하여 자연스러운 물리 충돌을 처리합니다.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="spec-card">
+                        <div class="spec-icon text-cyan"><i class="fa-solid fa-volume-high"></i></div>
+                        <h4>소음 전파 & AI 어그로 감지</h4>
+                        <p>투척물 충돌 등 물리적 충격이 가해졌을 때 발생하는 충돌 크기에 비례하여 실시간 소음 음파 반경을 계산합니다. 좀비 적(Enemy) 캐릭터의 청각 인지 노드가 이 소음 구역을 인지하여 어그로를 획득하고 추적 모드로 돌입합니다.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="spec-card">
+                        <div class="spec-icon text-cyan"><i class="fa-solid fa-crosshairs"></i></div>
+                        <h4>무기 투척 및 홀스터 시스템</h4>
+                        <p>플레이어의 허리춤 및 등 뒤의 가상 공간 영역에 홀스터(Holster) 볼륨 값을 할당했습니다. VR 컨트롤러를 이용하여 무기를 홀스터에 가깝게 대고 그립 버튼을 누르면 자석처럼 붙어 보관되며, 언제든 가볍게 꺼내 투척 무기로 활용할 수 있습니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: SYSTEM RADAR SIMULATOR (INTERACTIVE BIOHAZARD HUD) -->
+            <section class="dossier-panel panel-dark full-width">
+                <div class="panel-header">
+                    <h3><i class="fa-solid fa-radiation text-orange"></i> 03. SENSORY RADAR SIMULATOR / 청각 인지 레이더 시뮬레이션</h3>
+                </div>
+                <div class="panel-body radar-sandbox">
+                    <div class="radar-explanation">
+                        <p class="typewriter-text">
+                            <strong>[프로토타입 메커니즘 가상 체험]</strong>
+                        </p>
+                        <p class="typewriter-text">
+                            아래의 전술 레이더 디스플레이는 게임 내 <strong>소음 전파 & 좀비 AI 추적 시스템</strong>을 시각화한 모형입니다.
+                        </p>
+                        <p class="typewriter-text">
+                            1. **소음 유발** 버튼을 누르면 플레이어 중심부에서 음파 파동(노란 원)이 퍼져나갑니다.<br>
+                            2. 음파 영역이 근처에서 순찰 중인 **좀비 블립(빨간 점)**에 도달하면 좀비가 충격 소음을 감지하고 경보 상태로 돌입해 플레이어를 급속 추격하기 시작합니다.<br>
+                            3. **무기 장착** 버튼을 눌러 홀스터로부터 물리 무기를 발도하는 VR 그립 상호작용 피드백을 체험해 보세요.
+                        </p>
+                        <div class="radar-controls">
+                            <button class="btn-radar btn-noise" id="radar-btn-noise">
+                                <i class="fa-solid fa-volume-high"></i> 소음 유발 (MAKE NOISE)
+                            </button>
+                            <button class="btn-radar btn-weapon" id="radar-btn-weapon">
+                                <i class="fa-solid fa-shield-halved"></i> 홀스터 무기 발도 (DRAW WEAPON)
+                            </button>
+                            <button class="btn-radar btn-reset" id="radar-btn-reset">
+                                <i class="fa-solid fa-rotate-left"></i> 레이더 초기화
+                            </button>
+                        </div>
+                        <div class="console-sub-log" id="radar-log">
+                            SYSTEM: WAITING FOR USER PROTOCOL ACTIVATION...
+                        </div>
+                    </div>
+
+                    <!-- Gritty Circular Radar Display -->
+                    <div class="radar-display">
+                        <div class="radar-screen">
+                            <div class="radar-sweep-bar"></div>
+                            <!-- Player center blip -->
+                            <div class="blip player-blip"></div>
+                            <!-- Hostile blips -->
+                            <div class="blip zombie-blip zb-1" id="zb-1"></div>
+                            <div class="blip zombie-blip zb-2" id="zb-2"></div>
+                            <div class="blip zombie-blip zb-3" id="zb-3"></div>
+                            <!-- Sound Wave concentric ring -->
+                            <div class="radar-soundwave-ring" id="radar-ring"></div>
+                        </div>
+                        <div class="radar-hud-ring-1"></div>
+                        <div class="radar-hud-ring-2"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: DEVELOPMENT ROADMAP (WHAT WE WILL BUILD - 개발 예정 기능) -->
+            <section class="dossier-panel panel-dark full-width">
+                <div class="panel-header">
+                    <h3><i class="fa-solid fa-map-location-dot text-orange"></i> 04. FORWARD STRATEGY / 향후 개발 로드맵</h3>
+                </div>
+                <div class="panel-body roadmap-deck">
+                    <div class="roadmap-card">
+                        <div class="num">01</div>
+                        <h4>추출(Extraction) 파밍 매커니즘</h4>
+                        <p>서울 여의도 등 제한구역 폐허 속에서 안전하게 폐지를 줍고 전리품을 획득한 후, 좀비 군집 및 타 생존자들의 위협을 뚫고 무사히 탈출 헬기나 안전 구역 지하로 복귀하여 자산을 누적하는 루프를 도입합니다.</p>
+                    </div>
+
+                    <div class="roadmap-card">
+                        <div class="num">02</div>
+                        <h4>근접 무기 리얼 타격 판정</h4>
+                        <p>Jolt 물리 엔진의 강체 충돌 지점 좌표와 휘두르는 컨트롤러의 각속도 벡터를 결합하여, 공격 부위별(머리, 다리 등)로 가해지는 충격 관성 운동량을 미세하게 다변화하여 몰입도 높은 손맛을 설계할 예정입니다.</p>
+                    </div>
+
+                    <div class="roadmap-card">
+                        <div class="num">03</div>
+                        <h4>바리케이드 및 지형지물 물리 바인딩</h4>
+                        <p>좀비의 추적을 차단하기 위해 문에 널판지를 덧대어 못을 박거나, 주변 물리 가구(의자, 테이블 등)를 문가로 끌어당겨 좀비 떼의 진입 압력을 감쇄시키는 물리적 바리케이트 방어 장치를 구현합니다.</p>
+                    </div>
+
+                    <div class="roadmap-card text-yellow-border">
+                        <div class="num text-yellow">DEV</div>
+                        <h4 class="text-yellow">ACTIVE PROJECT STATUS</h4>
+                        <p class="typewriter-text text-yellow">
+                            현재 핵심 VR 트래킹 및 좀비 청각 AI 감지 모델링이 1차 구축 완료되었으며, 아포칼립스 파밍 구조 및 근접 타격감 튜닝 단계를 거쳐 지속적인 개발이 진행되고 있는 현역 프로토타입 상태입니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ==================== TACTICAL HAZARD FOOTER ==================== -->
+        <footer class="tactical-footer">
+            <div class="footer-left">
+                <span>CLASSIFIED LOGISTICS DOSSIER // PROJECT N PROTOCOL</span>
+            </div>
+            <div class="footer-right">
+                <span>COPYRIGHT &copy; 2026 KIM JONG HAN. ALL OUTBREAK RULES APPLY.</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript simulation logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>

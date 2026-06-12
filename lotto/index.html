@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOTTERY GENERATOR | Serverless Architecture Concept</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Outfit for Tech UI, Noto Sans KR for Korean -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Link to self-contained modular styling and script files -->
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- --- Header --- -->
+    <header>
+        <div class="header-logo">
+            LOTTERY ARCHITECTURE <span>APPS SCRIPT</span>
+        </div>
+        <div class="header-links">
+            <a href="https://script.google.com/macros/s/AKfycbwIYuqZlQ1IR2JCyJi-JjCyit4s6SksnitHsQ32eutyaWWwFeSVYNaG0s9JSzFTWtA/exec" target="_blank" class="btn-header-link btn-header-accent">
+                <i class="fa-solid fa-play" style="margin-right:6px;"></i> LIVE APPLICATION
+            </a>
+        </div>
+    </header>
+
+    <div class="wrapper">
+
+        <!-- --- Project Hero --- -->
+        <section class="project-hero">
+            <div class="project-category">Google Workspace Serverless Pipeline</div>
+            <h1 class="project-title">구글 앱스스크립트 & 시트 연동<br>로또 번호 추첨기</h1>
+            <p class="project-subtitle">서버 및 데이터베이스 비용 $0. Google Apps Script(GAS)를 API 게이트웨이로 활용하고, 구글 스프레드시트를 실시간 DB 및 누적 통계 연동 엔진으로 구현한 스마트 아키텍처입니다.</p>
+        </section>
+
+        <!-- --- Metadata Cards --- -->
+        <div class="meta-grid">
+            <div class="meta-item">
+                <div class="meta-lbl">Platform</div>
+                <div class="meta-val">Google Apps Script</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-lbl">Database</div>
+                <div class="meta-val">Google Sheets API</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-lbl">Hosting Cost</div>
+                <div class="meta-val">Free ($0.00 / Month)</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-lbl">Core Stack</div>
+                <div class="meta-val">HTML, CSS, JS, Apps Script</div>
+            </div>
+        </div>
+
+        <!-- --- Segment 1: Background & Vision --- -->
+        <section>
+            <div class="section-header">
+                <span class="section-num">01 / CONCEPT BACKGROUND</span>
+                <h2 class="section-title"><i class="fa-solid fa-cloud"></i> 제로 코스트 서버리스 아키텍처</h2>
+            </div>
+            <div class="tech-intro-box">
+                <div class="intro-left">
+                    <h3>학습 초기 단계에서 발견한 구글 생태계의 가능성</h3>
+                    <p>개발자 커리어 초반에 만든 이 로또 추첨기는 단순한 난수 생성 프로젝트를 넘어, <strong>"프론트엔드 웹 화면과 백엔드 데이터베이스를 어떻게 가장 효율적으로 연동할 것인가?"</strong>라는 원초적이고 핵심적인 질문에 대한 영리한 해답입니다.</p>
+                    <p>별도의 물리 서버나 호스팅 비용, 복잡한 데이터베이스 관리 시스템(DBMS) 구축 없이도 <strong>구글 스프레드시트(Google Sheets)</strong>를 트랜잭션 DB로 사용하고, <strong>구글 앱스스크립트(Google Apps Script, GAS)</strong>를 REST API 백엔드 플랫폼으로 융합시켜 영구적인 무료 서버리스 풀스택 솔루션을 완성했습니다.</p>
+                </div>
+                <div class="intro-right">
+                    <div class="stats-card">
+                        <div class="sc-icon"><i class="fa-solid fa-database"></i></div>
+                        <div class="sc-number">100%</div>
+                        <div class="sc-lbl">Real-time Sheets Sync Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Segment 2: Interactive System Flowchart --- -->
+        <section>
+            <div class="section-header">
+                <span class="section-num">02 / INTERACTIVE PIPELINE FLOWCHART</span>
+                <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> 실시간 데이터 연동 파이프라인</h2>
+            </div>
+            <p style="color:var(--text-muted); margin-bottom:30px; font-size:0.95rem;">
+                <i class="fa-solid fa-circle-info" style="color:var(--accent-cyan); margin-right:6px;"></i> 각 아키텍처 노드를 클릭하면 해당 구간에서 발생하는 데이터 흐름, 핵심 스크립트 코드, 구글 시트 연동 명세를 즉시 확인할 수 있습니다.
+            </p>
+            <div class="flowchart-grid">
+                <!-- Left: Flowchart Nodes -->
+                <div class="flowchart-nodes">
+                    <!-- Node 1 -->
+                    <div class="flow-node active" data-node="ui">
+                        <div class="node-icon"><i class="fa-solid fa-desktop"></i></div>
+                        <div class="node-details">
+                            <span class="node-step">STEP 01</span>
+                            <h4>UI 웹 클라이언트 (프론트엔드)</h4>
+                            <p>1회 추첨 / 5회 추첨 명령 전달</p>
+                        </div>
+                        <div class="node-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                    </div>
+
+                    <!-- Node 2 -->
+                    <div class="flow-node" data-node="gas">
+                        <div class="node-icon"><i class="fa-solid fa-gears"></i></div>
+                        <div class="node-details">
+                            <span class="node-step">STEP 02</span>
+                            <h4>Google Apps Script (REST API Engine)</h4>
+                            <p>doPost(e) 수신 및 추첨 번호 난수 연산</p>
+                        </div>
+                        <div class="node-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                    </div>
+
+                    <!-- Node 3 -->
+                    <div class="flow-node" data-node="sheet">
+                        <div class="node-icon"><i class="fa-solid fa-file-excel"></i></div>
+                        <div class="node-details">
+                            <span class="node-step">STEP 03</span>
+                            <h4>Google Sheets (Persistent Database)</h4>
+                            <p>스프레드시트에 번호 행 누적 추가 및 보관</p>
+                        </div>
+                        <div class="node-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                    </div>
+
+                    <!-- Node 4 -->
+                    <div class="flow-node" data-node="stats">
+                        <div class="node-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="node-details">
+                            <span class="node-step">STEP 04</span>
+                            <h4>통계 집계 엔진 (Frequency Stats)</h4>
+                            <p>구글 시트 COUNTIF 연동 실시간 누적 분석</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Specifications Info Panel -->
+                <div class="flowchart-info-panel">
+                    <div class="panel-inner">
+                        <!-- UI Detail Card -->
+                        <div id="panel-ui" class="panel-card active">
+                            <span class="panel-badge">FRONTEND CLIENT</span>
+                            <h3>클라이언트 추첨 요청 (fetch AJAX)</h3>
+                            <p class="panel-desc">사용자가 추첨 화면에서 "1회 추첨" 또는 "5회 연속 추첨" 버튼을 클릭하면, 웹앱 클라이언트 자바스크립트는 구글 앱스스크립트(GAS) Web App Endpoint URL로 HTTP POST 요청을 날려 데이터를 송수신합니다.</p>
+                            <div class="code-box">
+                                <span class="code-lbl">Javascript fetch Interface</span>
+                                <pre><code>fetch(GAS_ENDPOINT, {
+  method: 'POST',
+  body: JSON.stringify({ action: 'draw', count: 5 })
+})
+.then(res => res.json())
+.then(data => {
+  // 결과 UI 애니메이션 출력
+  renderLottoBalls(data.numbers);
+});</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- GAS Detail Card -->
+                        <div id="panel-gas" class="panel-card">
+                            <span class="panel-badge badge-purple">APPS SCRIPT API</span>
+                            <h3>구글 앱스스크립트 API 제어 컨트롤러</h3>
+                            <p class="panel-desc">구글의 서버리스 컨테이너 환경에서 실행되는 Apps Script 코드는 `doPost(e)` 리스너로 들어오는 비동기 요청을 파싱하고, 서버 사이드 난수 로또 추첨 로직을 수행한 후 결과를 데이터베이스로 주입합니다.</p>
+                            <div class="code-box">
+                                <span class="code-lbl">doPost(e) Serverless Controller</span>
+                                <pre><code>function doPost(e) {
+  var request = JSON.parse(e.postData.contents);
+  if (request.action === 'draw') {
+    var drawnNumbers = generateLottoNumbers(request.count);
+    saveToSheet(drawnNumbers);
+    return ContentService.createTextOutput(
+      JSON.stringify({ numbers: drawnNumbers })
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Sheet Detail Card -->
+                        <div id="panel-sheet" class="panel-card class-sheet">
+                            <span class="panel-badge badge-green">GOOGLE SHEETS DB</span>
+                            <h3>구글 스프레드시트 트랜잭션 DB</h3>
+                            <p class="panel-desc">앱스스크립트의 `SpreadsheetApp` 기본 패키지 API를 호출하여, 추첨된 난수 조합과 추첨 일시(Timestamp)를 구글 스프레드시트에 영구 레코드로 누적 저장합니다. 안정적이고 비용이 전혀 들지 않는 영구 보관소입니다.</p>
+                            <div class="code-box">
+                                <span class="code-lbl">Database Sheet Append Row</span>
+                                <pre><code>function saveToSheet(numbersArray) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName("DrawHistory");
+  var timestamp = new Date();
+  
+  // 2차원 데이터 구조로 한번에 시트에 밀어넣어 I/O 속도 극대화
+  numbersArray.forEach(function(row) {
+    sheet.appendRow([timestamp, row[0], row[1], row[2], row[3], row[4], row[5]]);
+  });
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Stats Detail Card -->
+                        <div id="panel-stats" class="panel-card class-stats">
+                            <span class="panel-badge badge-gold">FREQUENCY ENGINE</span>
+                            <h3>실시간 번호별 누적 통계 분석</h3>
+                            <p class="panel-desc">구글 시트의 막강한 수식(Formula) 연산 기능인 `COUNTIF`를 별도의 통계 연산 테이블에 심어 둡니다. 데이터가 수집될 때마다 서버 부하가 전혀 없이 **1부터 45까지 각 번호의 전체 누적 출현 횟수와 백분율 빈도**가 실시간으로 수집됩니다.</p>
+                            <div class="code-box">
+                                <span class="code-lbl">Sheets Real-time Formula</span>
+                                <pre><code>// 1번 번호의 누적 출현 빈도수 구하기
+=COUNTIF(DrawHistory!B:G, 1)
+
+// 45번 번호의 누적 출현 빈도수 구하기
+=COUNTIF(DrawHistory!B:G, 45)
+
+// 번호별 출현 빈도를 기준으로 정렬하여 가시적인 순위 랭킹 제공</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Segment 3: Key Technical Features --- -->
+        <section>
+            <div class="section-header">
+                <span class="section-num">03 / CORE FEATURES</span>
+                <h2 class="section-title"><i class="fa-solid fa-list-check"></i> 로또 추첨기 핵심 구현 기능</h2>
+            </div>
+            <div class="tech-grid">
+                <!-- Feature 1 -->
+                <div class="tech-card">
+                    <div class="tc-icon-wrap"><i class="fa-solid fa-rotate"></i></div>
+                    <h3>1회 & 5회 연속 추첨 기능</h3>
+                    <p>웹 클라이언트에서 싱글 루프 및 멀티 루프 요청을 동적으로 조작할 수 있어, 사용자의 다양한 테스트 요구사항(소량/다량)을 비동기 스레드 차단 없이 매끄럽게 소화합니다.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="tech-card">
+                    <div class="tc-icon-wrap"><i class="fa-solid fa-chart-bar"></i></div>
+                    <h3>누적 통계 엔진 실시간 통계 수집</h3>
+                    <p>스프레드시트의 가벼움과 데이터 구조를 이용해, 추첨 이력이 갱신될 때마다 번호별 빈도 데이터를 실시간 캐싱 정렬하여 어떤 번호가 가장 많이 행운을 가져왔는지 즉시 연동됩니다.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="tech-card">
+                    <div class="tc-icon-wrap"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3>관리자 전용 데이터 초기화</h3>
+                    <p>테스트 데이터가 너무 무겁거나 통계 패턴을 완전히 리셋하고 싶을 때, 백엔드 앱스스크립트에 심어 둔 관리자 패널 핸들러를 통해 단 한 번의 클릭으로 기록 시트를 안전하게 비우고 랭킹 테이블을 영점화할 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Segment 4: Developer's Behind Story --- -->
+        <section>
+            <div class="section-header">
+                <span class="section-num">04 / DEVELOPER'S BEHIND STORY</span>
+                <h2 class="section-title"><i class="fa-solid fa-terminal"></i> 제작자의 기획 비하인드</h2>
+            </div>
+            <div class="story-container">
+                <div class="story-left">
+                    <div class="story-avatar-wrap">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h4>KIM JONG HAN</h4>
+                    <p>Google Cloud & GAS Dev</p>
+                </div>
+                <div class="story-right">
+                    <h3>"단순 추첨 프로젝트에서 서버와 클라이언트, DB의 완전한 유기적 순환을 배웠습니다."</h3>
+                    <p>이 번호 추첨기는 자바스크립트를 처음 마스터하고 구글 클라우드 및 구글 앱스스크립트(GAS)를 처음 접하면서 탄생시킨 소중한 개발 입문 프로젝트입니다. 웹 화면의 버튼 동작이 지구 반대편 구글 서버 컨테이너의 트리거를 당기고, 그것이 실시간 구글 스프레드시트 셀에 안전하게 한 줄씩 기록되는 전체 개발 순환 모델을 처음 온몸으로 이해하게 해 준 기념비적인 이정표입니다.</p>
+                    <p>비록 화면 구성은 가볍고 단순할지 몰라도, 내부적으로는 **프론트엔드 비동기 통신(fetch AJAX) ➔ RESTful API 게이트웨이 파싱 ➔ SpreadsheetApp 입출력 최적화 ➔ 데이터베이스 트랜잭션 ➔ 수식(Formula)을 이용한 통계 캐싱 엔진**이 유기적이고 완벽한 톱니바퀴처럼 굴러가도록 아키텍처를 설계했습니다.</p>
+                    <p>서버 유지비가 단 1원도 발생하지 않으면서도, 누적된 추첨 이력 데이터를 통계 랭킹으로 정밀 분석해 주는 이 작지만 단단한 시스템은, 훗날 제가 고도화된 대규모 웹 서비스나 빅데이터 자동화 분석 파이프라인을 두려움 없이 기획하고 구현해 내는 강력한 기술적 초석이 되어 주었습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- Bottom CTA --- -->
+        <div class="bottom-cta">
+            <h3 class="cta-title">EXPLORE THE LIVE APP</h3>
+            <p class="cta-subtitle">구글 서버리스 클라우드 환경에서 실시간으로 구동 중인 로또 번호 추첨기 라이브 버전을 직접 구동해 보세요.</p>
+            <div class="cta-btn-group">
+                <a href="https://script.google.com/macros/s/AKfycbwIYuqZlQ1IR2JCyJi-JjCyit4s6SksnitHsQ32eutyaWWwFeSVYNaG0s9JSzFTWtA/exec" target="_blank" class="btn-cta-link btn-renewal">
+                    <i class="fa-solid fa-play"></i> 로또 추첨기 실행하기 (Apps Script)
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- --- Premium Cyber Footer Copyright --- -->
+    <footer>
+        <div class="footer-inner">
+            <p>© 2026 KIM JONG HAN. All Rights Reserved. Built as a Standalone Serverless Spec.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

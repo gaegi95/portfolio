@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DESKSET - Concept Design</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&family=Outfit:wght@300;400;600;800;900&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- PROGRESS -->
+  <div class="progress-container">
+    <div class="progress-bar" id="scroll-bar"></div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="main-nav">
+    <div class="nav-logo">DESKSET</div>
+    <div class="nav-links">
+      <a href="#intro">Vision</a>
+      <a href="#payment">Payments</a>
+      <a href="#sns-auth">Engineering</a>
+      <a href="#rbac">Access Control</a>
+      <a href="#security">Routing</a>
+      <a href="#architecture">Architecture</a>
+    </div>
+    <a href="https://gaegi95.github.io/shop/" target="_blank" class="nav-logo btn-explore-top">
+      EXPLORE APP
+    </a>
+  </nav>
+
+  <!-- SCROLL CONTAINER -->
+  <div class="scroll-container">
+
+    <!-- 01: HERO -->
+    <section id="intro" class="snap-section reveal">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="tech-tag">2026 HIGH-ENGINEERING SPA PLATFORM</div>
+          <h1>PREMIUM<span>DESKSET</span></h1>
+          <p class="section-desc">
+            단순한 쇼핑몰 모형을 넘어선 고성능 프론트엔드 아키텍처.<br>
+            React 18 + Vite 기반으로 설계된 고성능 엔지니어링 중심의 SPA 웹 플랫폼, 데스크셋.
+          </p>
+        </div>
+        <div class="hero-img-container">
+          <div class="phone-stack">
+            <div class="phone-wrapper p-right">
+              <img src="shop.png" alt="DeskSet Storefront Mockup">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02: AUTONOMIC PAYMENT (Toss Payments v2) -->
+    <section id="payment" class="snap-section reveal">
+      <div class="side-left">
+        <div class="bg-number">01</div>
+        <div class="section-label">PAYMENT SYSTEMS</div>
+        <h2 class="section-title-large">REAL-TIME<br>CHECKOUT</h2>
+        <p class="section-desc">
+          토스페이먼츠 v2 공식 SDK 연동을 완료했습니다.<br>
+          고도의 샌드박스 보안 설계로 개인 정보와 인증 정보를 격리하여 실제 카드 결제와 승인/실패 콜백을 정밀하게 트래킹합니다.
+        </p>
+      </div>
+      <div class="side-right">
+        <div class="card-stack">
+          <div class="content-card">
+            <span class="card-num"><i class="fa-solid fa-credit-card"></i></span>
+            <div>
+              <h3>Toss Payments SDK v2</h3>
+              <p class="text-muted">카드/가상계좌 결제창 실시간 호출 및 처리 모듈 완벽 탑재</p>
+            </div>
+          </div>
+          <div class="content-card">
+            <span class="card-num"><i class="fa-solid fa-shield-halved"></i></span>
+            <div>
+              <h3>Public Sandbox Credentials</h3>
+              <p class="text-muted">보안 인증 자격증명을 완전 가상화하여 안전하고 견고한 결제망 테스트 완료</p>
+            </div>
+          </div>
+          <div class="content-card">
+            <span class="card-num"><i class="fa-solid fa-arrows-spin"></i></span>
+            <div>
+              <h3>완성형 주문 상태 동기화</h3>
+              <p class="text-muted">결제 승인 결과 및 콜백 데이터를 파싱하여 실시간으로 주문 성공 처리 흐름 검증</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02: HIGH-END FRONTEND ENGINEERING (SNS Auth & SDK Hardening) -->
+    <section id="sns-auth" class="snap-section reveal">
+      <div class="side-left">
+        <div class="bg-number">02</div>
+        <div class="section-label">ENGINEERING CORE</div>
+        <h2 class="section-title-large">HIGH-END<br>ENGINEERING</h2>
+        <p class="section-desc">
+          3대 간편 로그인(네이버, 카카오, 구글) 연동하고 데이터를 저장하지 않는 구조를 구현했습니다. <br>외부 SDK의 기능적 한계와 브라우저 렌더링 부작용을 극복하며 완성한 차세대 프론트엔드
+          엔지니어링
+          핵심 성과입니다.
+        </p>
+      </div>
+      <div class="side-right">
+        <div class="card-stack">
+          <!-- 3대 간편 로그인 및 휘발성 세션 -->
+          <div class="content-card">
+            <span class="card-num"><i class="fa-solid fa-key"></i></span>
+            <div>
+              <h3>3대 간편 로그인 & 휘발성 세션</h3>
+              <p class="text-muted">Google JWT 디코딩, Kakao 및 Naver SDK 완벽 통합 및 실시간 아바타 매핑. 특히 보안 극대화를 위해 의도적으로 백엔드 데이터베이스
+                연동을 배제하고, 세션 종료 및 캐시 소멸 시 사용자 식별 정보의 흔적이 전혀 남지 않는 고보안성 휘발성(Ephemeral) 세션을 실현했습니다.</p>
+            </div>
+          </div>
+          <!-- RouteSyncer 무한루프 해결 -->
+          <div class="content-card">
+            <span class="card-num"><i class="fa-solid fa-rotate"></i></span>
+            <div>
+              <h3>useRef 기반 RouteSyncer & Zero-Flicker 라우팅</h3>
+              <p class="text-muted">React 상태 렌더링 업데이트와 브라우저 History API의 상호 트리거로 인한 무한 루프 경쟁 상태(Race Condition)를 useRef
+                참조 동기화 설계로 완벽히 해결하여, 단 1프레임의 깜빡임이나 딜레이도 발생하지 않는 완전무결한 Zero-Flicker 주소 바인딩을 달성했습니다.</p>
+            </div>
+          </div>
+          <!-- 글로벌 은닉형 컨테이너 아키텍처 -->
+          <div class="content-card">
+            <span class="card-num"><i class="fa-solid fa-shield-halved"></i></span>
+            <div>
+              <h3>Naver SDK 글로벌 은닉형 컨테이너</h3>
+              <p class="text-muted">네이버 로그인 SDK 마운트 시점의 React 가상 DOM 불일치로 초래되는 런타임 Null 참조 크래시를 방어하기 위해, React 라이프사이클
+                외부에 전역 은닉형 컨테이너(Hidden Global Container) 우회 프록시 아키텍처를 구축하여 100%의 가용성을 확보했습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03: ACCESS CONTROL (3-Tier Dashboard) -->
+    <section id="rbac" class="snap-section reveal">
+      <div class="side-left" style="flex: 0.8;">
+        <div class="bg-number">03</div>
+        <div class="section-label">ACCESS SYSTEM</div>
+        <h2 class="section-title-large">3-TIER<br>DASHBOARD</h2>
+        <p class="section-desc">
+          사용자의 역할(Consumer, Seller, Admin)에 맞춰 인터페이스와 권한 장벽을 완벽하게 제어합니다.
+        </p>
+      </div>
+      <div class="side-right">
+        <div class="feature-grid">
+          <!-- Consumer Info -->
+          <div class="feature-card-small">
+            <div class="feature-icon-box"><i class="fa-solid fa-user-tag text-cyan"></i></div>
+            <div class="chat-role text-cyan">CONSUMER</div>
+            <h3>소비자 페이지</h3>
+            <p class="text-muted">데스크 매트 등 상품 필터링, 장바구니 관리, Toss 실시간 결제, 1:1 고객 문의, 리뷰 작성</p>
+          </div>
+          <!-- Partner Info -->
+          <div class="feature-card-small">
+            <div class="feature-icon-box"><i class="fa-solid fa-chart-line text-green"></i></div>
+            <div class="chat-role text-green">SELLER</div>
+            <h3>입점 파트너 포털</h3>
+            <p class="text-muted">네온 스타일 대시보드 매출 차트 분석, 상품 등록/관리, 입점 승인 추적</p>
+          </div>
+          <!-- System Admin -->
+          <div class="feature-card-small" style="grid-column: span 2;">
+            <div class="feature-icon-box"><i class="fa-solid fa-user-shield text-purple"></i></div>
+            <div class="chat-role text-purple">SYSTEM ADMIN</div>
+            <h3>최상위 관리자 포털</h3>
+            <p class="text-muted">독립적인 로그인 장벽 우회 보호, 회원 상태 복구/차단, 입점 파트너 승인 심사 및 전체 통계 제어</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04: SECURITY ROUTING (Administrative Protection) -->
+    <section id="security" class="snap-section reveal">
+      <div class="side-left">
+        <div class="bg-number">04</div>
+        <div class="section-label">SECURITY & ROUTING</div>
+        <h2 class="section-title-large">URL<br>CLEAN-UP</h2>
+        <p class="section-desc">
+          브라우저 History API를 전역 라우터와 연동하여 독립적인 주소 공간을 관리합니다.
+        </p>
+      </div>
+      <div class="side-right">
+        <div class="card-stack">
+          <div class="content-card">
+            <span class="card-num"><i class="fa-solid fa-lock"></i></span>
+            <div>
+              <h3>독립 로그인 차단 벽 (Security Interceptor)</h3>
+              <p class="text-muted">주소창에 직접 `/admin`을 기입하여 접근 시 인증이 만료되었거나 비인증된 유저를 즉각 강제 퇴출</p>
+            </div>
+          </div>
+          <div class="content-card">
+            <span class="card-num"><i class="fa-solid fa-broom"></i></span>
+            <div>
+              <h3>실시간 URL 클린업 동기화</h3>
+              <p class="text-muted">로그아웃 또는 복귀 시 불필요한 URL 잔여 파라미터나 상태값을 실시간으로 제거하여 깔끔한 주소 라우팅 보장</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05: SPA ROUTING TRICK & ARCHITECTURE -->
+    <section id="architecture" class="snap-section reveal">
+      <div class="side-left">
+        <div class="bg-number">05</div>
+        <div class="section-label">SPA ECOSYSTEM</div>
+        <h2 class="section-title-large">404 SPA<br>BYPASS</h2>
+        <div class="util-table">
+          <div class="util-row">
+            <div class="col-step">REDIRECT TRICK</div>
+            <div class="col-purpose">GitHub Pages 정적 호스팅의 한계를 극복하기 위해, 404 에러 주소를 쿼리 스트링으로 실시간 치환하여 index.html로 우회 중계
+            </div>
+          </div>
+          <div class="util-row">
+            <div class="col-step">HISTORY RESTORE</div>
+            <div class="col-purpose">리액트 컴포넌트 마운팅 시 replaceState를 구동하여 지저분한 해시 기법(#) 없이 도메인 주소창을 깔끔하게 복원 로드</div>
+          </div>
+          <div class="util-row">
+            <div class="col-step">PERFORMANCE</div>
+            <div class="col-purpose">Vite와 React 18 HMR 인프라를 채택하여 즉각적인 데이터 파싱과 무결성이 확보된 렌더링 스피드 구현</div>
+          </div>
+        </div>
+      </div>
+      <div class="side-right">
+        <div class="tech-stack-panel">
+          <h3>CORE STACK INFO</h3>
+          <div class="stack-list">
+            <span>React 18</span>
+            <span>Vite</span>
+            <span>Context API</span>
+            <span>Toss Payments v2</span>
+            <span>Google GSI</span>
+            <span>Kakao SDK</span>
+            <span>Naver SDK</span>
+            <span>Vanilla CSS</span>
+            <span>History API</span>
+            <span>GitHub Pages</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="snap-section reveal"
+      style="background: #0f172a; text-align: center; justify-content: center; flex-direction: column;">
+      <h1 style="font-size: 6vw; font-weight: 900; line-height: 1; letter-spacing: -2px; color: var(--primary);">DESKSET
+      </h1>
+      <p style="color: #94a3b8; margin-top: 2rem;">완벽한 오피스 라이프스타일을 구현합니다. 지금 경험하세요.</p>
+      <a href="https://gaegi95.github.io/shop/" target="_blank"
+        style="margin-top: 3rem; color: var(--primary); text-decoration: none; font-weight: 900; font-size: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 5px;">
+        EXPLORE THE STOREFRONT
+      </a>
+    </footer>
+
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const scrollContainer = document.querySelector('.scroll-container');
+    scrollContainer.addEventListener('scroll', () => {
+      const scrolled = scrollContainer.scrollTop;
+      const total = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+      const bar = document.getElementById("scroll-bar");
+      if (bar) bar.style.width = (scrolled / total * 100) + "%";
+    });
+
+    // SMOOTH SCROLL FOR NAV LINKS
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          scrollContainer.scrollTo({
+            top: targetSection.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
